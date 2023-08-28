@@ -23,7 +23,7 @@ export const childrenHeroesRoutes = [
         element: <SearchPage />,
     },
     {
-        path: 'hero',
+        path: 'hero/:id',
         element: <HeroPage />,
     },
 ];
