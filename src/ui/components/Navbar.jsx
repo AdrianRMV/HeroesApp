@@ -5,9 +5,10 @@ import { AuthContext } from '../../auth/context/AuthContext';
 export const Navbar = () => {
     const navigate = useNavigate();
 
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
     const onLogout = () => {
+        logout();
         navigate('/login', {
             // replace evita que el usuario navege hacia atras en el navegador, esto para evitar por ejemplo en el logout que se meta de nuevo a la aplicacion SIN estar logueado
             replace: true,
