@@ -5,11 +5,14 @@ import { AuthContext } from '../context/AuthContext';
 export const LoginPage = () => {
     const { login } = useContext(AuthContext);
 
+    // Si existe un lastPath, entonces la variable tendra el valor del lastPath SI NO, tendra el valor de '/'
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
     const navigate = useNavigate();
 
     const onLogin = () => {
         login('Adrian Ramirez');
-        navigate('/', {
+        navigate(lastPath, {
             replace: true,
         });
     };
